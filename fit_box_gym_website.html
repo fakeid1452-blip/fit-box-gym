@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT BOX Gym | 24/7 Exclusive Fitness in Khanpur, New Delhi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0A0A0C',
+                            card: '#141418',
+                            surface: '#1E1E24',
+                            border: '#2A2A35',
+                            gold: '#D4AF37',
+                            goldHover: '#F3E5AB',
+                            goldLight: '#E5C158',
+                            amber: '#FFBF00',
+                            grayText: '#A1A1AA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Syne"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
+                        'gold-glow-lg': '0 0 40px -5px rgba(212, 175, 55, 0.5)',
+                        'card-glow': '0 10px 30px -10px rgba(0, 0, 0, 0.8)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A0A0C;
+            color: #F4F4F5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(20, 20, 24, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card {
+            background: rgba(25, 25, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.15);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #B8860B 100%);
+        }
+
+        .gold-gradient-btn {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gold-gradient-btn:hover {
+            background: linear-gradient(135deg, #FFF099 0%, #E5C158 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Pulse ring animation for 24/7 indicator */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .live-pulse {
+            animation: pulse-ring 2s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-brand-border/40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-goldLight to-brand-gold flex items-center justify-center text-black font-black text-xl shadow-gold-glow group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-square-minus"></i>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-2xl tracking-wider text-white block leading-none">FIT<span class="gold-gradient-text">BOX</span></span>
+                        <span class="text-[10px] tracking-widest uppercase text-brand-gold font-semibold block mt-1">Khanpur • 24/7</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-white hover:text-brand-gold transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium text-brand-grayText hover:text-brand-gold transition-colors">About Us</a>
+                    <a href="#services" class="text-sm font-medium text-brand-grayText hover:text-brand-gold transition-colors">Services</a>
+                    <a href="#calculator" class="text-sm font-medium text-brand-grayText hover:text-brand-gold transition-colors">BMI Calc</a>
+                    <a href="#reviews" class="text-sm font-medium text-brand-grayText hover:text-brand-gold transition-colors">Reviews</a>
+                    <a href="#contact" class="text-sm font-medium text-brand-grayText hover:text-brand-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA & Status -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 live-pulse"></span>
+                        Open 24/7 Now
+                    </div>
+                    <button onclick="openModal()" class="gold-gradient-btn text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-gold-glow cursor-pointer">
+                        Free Day Pass
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" onclick="toggleMobileMenu()" class="md:hidden text-zinc-300 hover:text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-brand-border/60 bg-brand-black/95 px-4 pt-4 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-white hover:text-brand-gold">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-grayText hover:text-brand-gold">About Us</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-grayText hover:text-brand-gold">Services</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-grayText hover:text-brand-gold">BMI Calculator</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-grayText hover:text-brand-gold">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-grayText hover:text-brand-gold">Contact</a>
+            
+            <div class="pt-4 border-t border-brand-border/40 flex flex-col gap-3">
+                <button onclick="openModal(); toggleMobileMenu();" class="w-full gold-gradient-btn text-black font-bold py-3 rounded-xl uppercase text-xs tracking-wider">
+                    Claim Free Day Pass
+                </button>
+                <a href="tel:09205441402" class="w-full text-center py-3 rounded-xl border border-brand-gold/40 text-brand-gold text-xs font-bold uppercase">
+                    <i class="fa-solid fa-phone mr-2"></i> Call Gym Directly
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(#2A2A35_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center pt-8">
+            <!-- Top Tagline Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-brand-gold/30 mb-8 animate-bounce">
+                <i class="fa-solid fa-crown text-brand-gold text-sm"></i>
+                <span class="text-xs uppercase tracking-widest font-semibold text-brand-gold">Quality, Not Quantity • Capped Membership</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                24/7 EXCLUSIVE <br class="hidden sm:inline">
+                <span class="gold-gradient-text">FITNESS HUB</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-brand-grayText mb-10 leading-relaxed font-normal">
+                No Overcrowding. Elite Crowd. Premium Equipment & Ambient Lighting in Khanpur, South Delhi. Experience workout freedom anytime.
+            </p>
+
+            <!-- Dual Action CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+                <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient-btn text-black font-extrabold text-sm uppercase tracking-wider shadow-gold-glow flex items-center justify-center gap-3 group">
+                    <span>Get Free Day Pass</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <a href="tel:09205441402" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white hover:border-brand-gold/60 font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-colors">
+                    <i class="fa-solid fa-phone text-brand-gold"></i>
+                    <span>Call 092054 41402</span>
+                </a>
+            </div>
+
+            <!-- Stats & Quick Facts Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-card p-4 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">4.8 <span class="text-brand-gold">★</span></div>
+                    <div class="text-xs text-brand-grayText font-medium mt-1">200+ Google Reviews</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-brand-gold font-display">24/7</div>
+                    <div class="text-xs text-brand-grayText font-medium mt-1">Always Open Access</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white font-display">100%</div>
+                    <div class="text-xs text-brand-grayText font-medium mt-1">Sanitized & Clean</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-brand-gold font-display">ELITE</div>
+                    <div class="text-xs text-brand-grayText font-medium mt-1">Limited Guest Cap</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Proof Strip -->
+    <section class="py-6 border-y border-brand-border/40 bg-brand-card/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-around gap-6 text-brand-grayText text-xs font-semibold uppercase tracking-widest">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-brand-gold text-base"></i> Strict Hygiene Protocols
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-brand-gold text-base"></i> Zero Waiting On Machines
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-user-check text-brand-gold text-base"></i> Certified Elite Trainers
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-wifi text-brand-gold text-base"></i> High-Speed Gym WiFi
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Visual Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-surface">
+                        <div class="aspect-[4/5] bg-gradient-to-tr from-brand-black via-brand-card to-zinc-900 p-8 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <span class="px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-bold uppercase tracking-wider">Our Vibe</span>
+                                <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                                    <i class="fa-solid fa-dumbbell text-xl"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-display text-3xl font-extrabold text-white mb-2">Designed For Serious Fitness.</h3>
+                                <p class="text-brand-grayText text-sm leading-relaxed mb-6">
+                                    At FIT BOX, we strictly restrict member volume so you never wait for weights or cardio stations. Experience optimal workout momentum every single day.
+                                </p>
+                                <div class="p-4 rounded-xl bg-brand-black/60 border border-brand-border/60">
+                                    <p class="text-xs text-brand-gold font-mono">
+                                        "We believe in quality, not quantity. Elite crowd with minimum guests. Proper hygiene and cleanliness."
+                                    </p>
+                                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest block mt-2">— FIT BOX Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Glow behind image element -->
+                    <div class="absolute -bottom-6 -right-6 w-full h-full bg-brand-gold/10 rounded-3xl -z-10 blur-xl"></div>
+                </div>
+
+                <!-- Right Copy Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-brand-gold uppercase text-xs font-bold tracking-widest block mb-2">The FIT BOX Difference</span>
+                        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                            A Modern Gym Created For Those Who Value Space & Hygiene.
+                        </h2>
+                    </div>
+
+                    <p class="text-brand-grayText text-base leading-relaxed">
+                        Located conveniently in Sardare Market, Khanpur, FIT BOX was founded to eliminate standard gym annoyances—overcrowding, unhygienic equipment, and chaotic spaces. We provide a tailored environment built around top-tier machinery, energetic ambient lighting, and dedicated personal coaching.
+                    </p>
+
+                    <!-- Feature Cards Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="glass-card p-5 rounded-2xl">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-3">
+                                <i class="fa-solid fa-users-slash"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Capped Crowd Policy</h4>
+                            <p class="text-xs text-brand-grayText">We consciously limit memberships to preserve space and ensure smooth, peaceful workout routines.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-3">
+                                <i class="fa-solid fa-pump-soap"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Sanitized Facilities</h4>
+                            <p class="text-xs text-brand-grayText">Spotless clean restrooms, fresh air handling systems, and round-the-clock machine sanitization.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-3">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Superb Ambience & Lighting</h4>
+                            <p class="text-xs text-brand-grayText">Architectural dark aesthetics paired with high-energy lighting engineered to keep your intensity high.</p>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-3">
+                                <i class="fa-solid fa-stopwatch"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Unrestricted 24/7 Access</h4>
+                            <p class="text-xs text-brand-grayText">Train on your own clock. Whether at 6 AM or 2 AM, our doors remain open for registered members.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Facilities Section -->
+    <section id="services" class="py-24 bg-brand-black/60 relative border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase text-xs font-bold tracking-widest block mb-2">Our Offerings</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    World-Class Training <span class="gold-gradient-text">& Facilities</span>
+                </h2>
+                <p class="text-brand-grayText text-sm sm:text-base mt-4">
+                    Everything you need to hit your transformation targets efficiently and safely.
+                </p>
+            </div>
+
+            <!-- Service Interactive Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">24/7 Full Gym Access</h3>
+                        <p class="text-brand-grayText text-sm leading-relaxed mb-6">
+                            Complete access to our strength floor, heavy dumbbells, squat racks, and high-performance cardio zone anytime of the day or night.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-300 font-medium mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Biometric keycard entry access</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Night-time security setup</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Fully climate controlled environment</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('24/7 Access')" class="w-full py-3 rounded-xl border border-brand-gold/30 text-brand-gold font-bold text-xs uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                        Inquire Membership
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group border-brand-gold/40 relative">
+                    <div class="absolute -top-3 right-6 bg-brand-gold text-black text-[10px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full shadow-gold-glow">
+                        High Success Rate
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">1-on-1 Personal Coaching</h3>
+                        <p class="text-brand-grayText text-sm leading-relaxed mb-6">
+                            Tailored body transformation programs guided by supportive, certified trainers. Diet planning, form correction, and accountability.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-300 font-medium mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Customized macro diet charts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Fat loss & muscle hypertrophy focus</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Weekly physique tracking</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Personal Training')" class="w-full py-3 rounded-xl gold-gradient-btn text-black font-bold text-xs uppercase tracking-wider">
+                        Book Personal Coach
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-house"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Online Live Classes</h3>
+                        <p class="text-brand-grayText text-sm leading-relaxed mb-6">
+                            Can’t visit the physical facility? Join our live interactive virtual sessions hosted by top FIT BOX trainers from home.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-300 font-medium mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> High-intensity interval workouts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Home mobility & core workouts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Direct real-time instructor feedback</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Online Classes')" class="w-full py-3 rounded-xl border border-brand-gold/30 text-brand-gold font-bold text-xs uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                        Join Virtual Program
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive BMI Calculator -->
+    <section id="calculator" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-gold/30 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-5">
+                        <span class="text-brand-gold uppercase text-xs font-bold tracking-widest block mb-2">Instant Assessment</span>
+                        <h3 class="font-display text-3xl font-extrabold text-white mb-4">Calculate Your Body Mass Index (BMI)</h3>
+                        <p class="text-brand-grayText text-sm mb-6 leading-relaxed">
+                            Check your body metrics instantly. Our head trainers will help you build a program based on your target weight zone.
+                        </p>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border text-xs text-brand-grayText space-y-1">
+                            <div>• < 18.5 : Underweight</div>
+                            <div>• 18.5 – 24.9 : Healthy Weight</div>
+                            <div>• 25.0 – 29.9 : Overweight Zone</div>
+                            <div>• 30.0+ : Obesity Target Area</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Inputs -->
+                    <div class="lg:col-span-7 bg-brand-black/60 p-6 sm:p-8 rounded-2xl border border-brand-border">
+                        <form id="bmiForm" onsubmit="calculateBMI(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Height (cm)</label>
+                                    <input type="number" id="bmiHeight" placeholder="e.g. 175" required min="100" max="250" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Weight (kg)</label>
+                                    <input type="number" id="bmiWeight" placeholder="e.g. 72" required min="30" max="250" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 gold-gradient-btn text-black font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-gold-glow">
+                                Calculate My BMI Now
+                            </button>
+                        </form>
+
+                        <!-- Result Display Box -->
+                        <div id="bmiResultBox" class="hidden mt-6 p-4 rounded-xl bg-brand-surface border border-brand-gold/40 text-center">
+                            <div class="text-xs uppercase tracking-widest text-brand-grayText">Your BMI Score</div>
+                            <div id="bmiValue" class="text-4xl font-extrabold font-display gold-gradient-text my-1">--</div>
+                            <div id="bmiCategory" class="text-sm font-bold text-white mb-2">--</div>
+                            <p id="bmiAdvice" class="text-xs text-brand-grayText">--</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews & Testimonials Section -->
+    <section id="reviews" class="py-24 bg-brand-black/40 border-t border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-brand-gold uppercase text-xs font-bold tracking-widest block mb-2">Member Feedback</span>
+                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Loved By Delhi’s <span class="gold-gradient-text">Fitness Elite</span>
+                    </h2>
+                </div>
+                
+                <div class="flex items-center gap-4 bg-brand-card px-5 py-3 rounded-2xl border border-brand-border">
+                    <div class="text-yellow-400 text-xl font-bold">4.8 ★</div>
+                    <div class="text-xs text-brand-grayText">
+                        <strong class="text-white block">Verified Google Rating</strong>
+                        Based on 200+ Member Reviews
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-200 text-sm italic mb-6 leading-relaxed">
+                            "Quality crowd, lighting, ambience all superb! You don't have to wait around for dumbbells or machines like other overcrowded local gyms in Khanpur."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border/60">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center text-xs">
+                            AK
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Aman K.</h5>
+                            <span class="text-[10px] text-brand-grayText">Google Review • Member</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-brand-gold/30">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-200 text-sm italic mb-6 leading-relaxed">
+                            "I highly recommend this place to workout at. Decent transformation rate! Trainers are extremely dedicated and form correction is spot on."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border/60">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center text-xs">
+                            PS
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Pooja Sharma</h5>
+                            <span class="text-[10px] text-brand-grayText">Justdial Review • 5/5 Stars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-200 text-sm italic mb-6 leading-relaxed">
+                            "Interior and equipment are awesome, specially the staff is so helpful. Open 24 hours makes it so smooth for my night shifts."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border/60">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center text-xs">
+                            RV
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">Rohan Verma</h5>
+                            <span class="text-[10px] text-brand-grayText">Google Review • Member</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info & Quick Calls Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-gold uppercase text-xs font-bold tracking-widest block mb-2">Connect With Us</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            Start Your Gym Journey Today.
+                        </h2>
+                        <p class="text-brand-grayText text-sm mt-3 leading-relaxed">
+                            Drop by Sardare Market, Khanpur or give our management a direct call to schedule your walk-through.
+                        </p>
+                    </div>
+
+                    <!-- Direct Call Cards -->
+                    <div class="space-y-3">
+                        <a href="tel:09205441402" class="glass-card p-4 rounded-2xl flex items-center justify-between group hover:border-brand-gold">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] uppercase text-brand-grayText block">Primary Desk</span>
+                                    <span class="font-bold text-white text-sm">+91 92054 41402</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-brand-gold font-semibold group-hover:underline">Call Now &rarr;</span>
+                        </a>
+
+                        <a href="tel:09205334884" class="glass-card p-4 rounded-2xl flex items-center justify-between group hover:border-brand-gold">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] uppercase text-brand-grayText block">Support / WhatsApp</span>
+                                    <span class="font-bold text-white text-sm">+91 92053 34884</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-brand-gold font-semibold group-hover:underline">Call Now &rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Address & Hours Info Block -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-gold text-lg mt-1"></i>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">FIT BOX Address</h5>
+                                <p class="text-xs text-brand-grayText leading-relaxed mt-1">
+                                    Sardare Market, A-166, Devli Rd, Pocket B, Jawahar Park, Khanpur, New Delhi, Delhi 110080
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 pt-3 border-t border-brand-border/60">
+                            <i class="fa-solid fa-clock text-brand-gold text-lg mt-1"></i>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Operational Hours</h5>
+                                <p class="text-xs text-brand-grayText mt-1">
+                                    Open 24 Hours • 7 Days a Week
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-gold/30">
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">Schedule A Visit / Pass Inquiry</h3>
+                        <p class="text-xs text-brand-grayText mb-8">Fill in your details below and our team will get in touch within 15 minutes.</p>
+
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Full Name</label>
+                                    <input type="text" required placeholder="e.g. Vikram Malhotra" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Phone Number</label>
+                                    <input type="tel" required placeholder="e.g. 9876543210" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Fitness Goal</label>
+                                    <select class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                        <option value="Fat Loss">Weight / Fat Loss</option>
+                                        <option value="Muscle Gain">Muscle Building</option>
+                                        <option value="Personal Training">1-on-1 Personal Coaching</option>
+                                        <option value="General Fitness">General Fitness & Endurance</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Preferred Visit Time</label>
+                                    <select class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
+                                        <option value="Morning">Morning (6 AM - 12 PM)</option>
+                                        <option value="Afternoon">Afternoon (12 PM - 5 PM)</option>
+                                        <option value="Evening">Evening (5 PM - 10 PM)</option>
+                                        <option value="Late Night">Late Night / 24/7 Hours</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-2">Message (Optional)</label>
+                                <textarea rows="3" placeholder="Tell us about any specific fitness needs..." class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 gold-gradient-btn text-black font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-gold-glow">
+                                Request Callback / Pass
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Map Placeholder Component -->
+            <div class="mt-16 rounded-3xl overflow-hidden border border-brand-border/60 bg-brand-surface h-72 relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.223392471929!2d77.22129777618057!3d28.502166975734268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1a2e7c93e4d%3A0x8898124fa1351be7!2sDevli%20Rd%2C%20Khanpur%2C%20New%20Delhi%2C%20Delhi%20110080!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" class="w-full h-full border-0 grayscale invert opacity-80 contrast-125" allowfullscreen="" loading="lazy"></iframe>
+                <div class="absolute bottom-4 left-4 glass-card px-4 py-2 rounded-xl text-xs font-bold text-white">
+                    📍 FIT BOX • Devli Road, Khanpur
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Floating Action Button (WhatsApp Direct) -->
+    <a href="https://wa.me/919205334884?text=Hi%20FIT%20BOX,%20I%20want%20to%20inquire%20about%20a%20free%20day%20pass!" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black border-t border-brand-border/60 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-black font-extrabold text-sm">
+                            <i class="fa-solid fa-square-minus"></i>
+                        </div>
+                        <span class="font-display font-extrabold text-xl text-white">FIT <span class="gold-gradient-text">BOX</span></span>
+                    </div>
+                    <p class="text-xs text-brand-grayText leading-relaxed mb-4">
+                        Premier 24/7 gym in Khanpur, South Delhi. Quality over quantity philosophy with strict guest limits and premium facilities.
+                    </p>
+                    <div class="text-[10px] uppercase tracking-wider text-brand-gold font-bold">
+                        ★ 4.8 / 5 Rating on Google
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-xs text-brand-grayText">
+                        <li><a href="#home" class="hover:text-brand-gold transition-colors">Home Page</a></li>
+                        <li><a href="#about" class="hover:text-brand-gold transition-colors">About FIT BOX</a></li>
+                        <li><a href="#services" class="hover:text-brand-gold transition-colors">Services & Training</a></li>
+                        <li><a href="#calculator" class="hover:text-brand-gold transition-colors">BMI Metric Calc</a></li>
+                        <li><a href="#reviews" class="hover:text-brand-gold transition-colors">Google Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Contact Details</h5>
+                    <ul class="space-y-2 text-xs text-brand-grayText">
+                        <li>Phone: +91 92054 41402</li>
+                        <li>Support: +91 92053 34884</li>
+                        <li>Devli Rd, Pocket B, Khanpur</li>
+                        <li>New Delhi, Delhi 110080</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Hours & Pass</h5>
+                    <p class="text-xs text-brand-grayText mb-4">Open 24 hours a day, 365 days a year. Experience zero crowding.</p>
+                    <button onclick="openModal()" class="w-full py-2.5 rounded-xl border border-brand-gold/40 text-brand-gold text-xs font-bold uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                        Get Day Pass
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-brand-border/40 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
+                <div>© <span id="yearSpan"></span> FIT BOX Gym. All rights reserved.</div>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-brand-gold">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-gold">Terms of Service</a>
+                    <a href="#" class="hover:text-brand-gold">Gym Rules</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Day Pass Modal -->
+    <div id="dayPassModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-md w-full p-6 sm:p-8 rounded-3xl border border-brand-gold/40 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-white">Claim Your Free Day Pass</h3>
+                <p class="text-xs text-brand-grayText mt-1" id="modalSubtext">Experience FIT BOX without commitment.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-1">Your Full Name</label>
+                    <input type="text" required placeholder="e.g. Rahul Verma" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="e.g. 9876543210" class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-grayText mb-1">Preferred Date</label>
+                    <input type="date" required class="w-full bg-brand-surface border border-brand-border rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 gold-gradient-btn text-black font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-gold-glow mt-2">
+                    Confirm Free Pass
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        
+        // Auto Update Footer Year
+        document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+        // Mobile Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        }
+
+        // Modal Functionality
+        function openModal(serviceName = null) {
+            const modal = document.getElementById('dayPassModal');
+            const subtext = document.getElementById('modalSubtext');
+            if (serviceName) {
+                subtext.textContent = `Inquiring for: ${serviceName}`;
+            } else {
+                subtext.textContent = `Experience FIT BOX without commitment.`;
+            }
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('dayPassModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert('🎉 Success! Your Free Day Pass request has been recorded. Our desk manager will contact you shortly.');
+            closeModal();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('📩 Thank you for reaching out! FIT BOX team will contact you within 15 minutes.');
+            e.target.reset();
+        }
+
+        // Interactive BMI Calculation Script
+        function calculateBMI(e) {
+            e.preventDefault();
+            const height = parseFloat(document.getElementById('bmiHeight').value) / 100;
+            const weight = parseFloat(document.getElementById('bmiWeight').value);
+
+            if (height > 0 && weight > 0) {
+                const bmi = (weight / (height * height)).toFixed(1);
+                const resultBox = document.getElementById('bmiResultBox');
+                const bmiValue = document.getElementById('bmiValue');
+                const bmiCategory = document.getElementById('bmiCategory');
+                const bmiAdvice = document.getElementById('bmiAdvice');
+
+                bmiValue.textContent = bmi;
+                resultBox.classList.remove('hidden');
+
+                if (bmi < 18.5) {
+                    bmiCategory.textContent = 'Underweight Target Zone';
+                    bmiCategory.className = 'text-sm font-bold text-amber-400 mb-1';
+                    bmiAdvice.textContent = 'Recommended: High-protein nutrition plan & structured hyper-trophy weight training.';
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    bmiCategory.textContent = 'Healthy Weight Zone';
+                    bmiCategory.className = 'text-sm font-bold text-emerald-400 mb-1';
+                    bmiAdvice.textContent = 'Great job! Maintain your athletic form with our strength & conditioning program.';
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    bmiCategory.textContent = 'Overweight Zone';
+                    bmiCategory.className = 'text-sm font-bold text-amber-500 mb-1';
+                    bmiAdvice.textContent = 'Target: 1-on-1 personal training can help you shed fat quickly while building lean muscle.';
+                } else {
+                    bmiCategory.textContent = 'High Density Zone';
+                    bmiCategory.className = 'text-sm font-bold text-red-400 mb-1';
+                    bmiAdvice.textContent = 'Our personal trainers specialize in safe, high-burn transformations.';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
